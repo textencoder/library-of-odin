@@ -11,15 +11,15 @@
     <form action="">
       <label for="author">
         AUTHOR
-        <input type="text" id="author" name="author" />
+        <input type="text" id="author" name="author" required/>
       </label>
       <label for="title">
         TITLE
-        <input type="text" id="title" name="title" />
+        <input type="text" id="title" name="title" required/>
       </label>
       <label for="pages">
         PAGES
-        <input type="number" id="pages" name="pages"/>
+        <input type="number" id="pages" name="pages" required/>
       </label>
       <label for="read">
         READ
@@ -30,7 +30,12 @@
   </aside>
 
     <main id="display">
-
+      <div class="books">
+        <div>author</div>
+        <div>title</div>
+        <div>pages</div>
+        <div>read</div>
+      </div>
     </main>
 
     <script src="script.js"></script>
