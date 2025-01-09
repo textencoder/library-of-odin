@@ -2,3 +2,41 @@
     margin: 0;
     padding: 0;
 }
+
+html {
+    display: grid;
+    place-items: center;
+    background-color: rgb(30, 41, 41);
+    font-family: sans-serif;
+}
+
+body {
+    height: 95vh;
+    width: 60vw;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+main {
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+form {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    gap: 20px;
+    background-color: darkslategray;
+    border-radius: 10px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+}

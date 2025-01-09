@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library of Odin</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <main id="display"></main>
+
+    <form action="">
+      <label for="author">
+        AUTHOR
+        <input type="text" id="author" name="author" />
+      </label>
+      <label for="title">
+        TITLE
+        <input type="text" id="title" name="title" />
+      </label>
+      <label for="pages">
+        PAGES
+        <input type="number" id="pages" name="pages"/>
+      </label>
+      <label for="read">
+        READ
+        <input type="checkbox" id="read" name="read"/>
+      </label>
+      <input type="submit" id="submit" />
+    </form>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
