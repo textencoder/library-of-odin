@@ -1,4 +1,8 @@
-
+const bookAuthor = document.getElementById("author");
+const bookTitle = document.getElementById("title");
+const bookPages = document.getElementById("pages");
+const bookRead = document.getElementById("read");
+const submitBtn = document.getElementById("submit");
 
 const myLibrary = [];
 
@@ -9,8 +13,23 @@ function Book(author, title, pages, read) {
   this.read = read;
 }
 
-function addBookToLibrary() {
-  // do stuff here
+function addBookToLibrary(book) {
+  myLibrary.push(book);
+  console.log(book);
 }
 
-console.log(new Book("Edgar Allen Poe", "The Raven", 40, true))
+submitBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  addBookToLibrary(
+    new Book(
+      bookAuthor.value,
+      bookTitle.value,
+      bookPages.value,
+      bookRead.checked
+    )
+  );
+  bookAuthor.value = "";
+  bookTitle.value = "";
+  bookPages.value = "";
+  bookRead.checked = false;
+});
