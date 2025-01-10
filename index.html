@@ -8,33 +8,49 @@
   </head>
   <body>
     <aside>
-    <form action="">
-      <label for="author">
-        AUTHOR
-        <input type="text" id="author" name="author" required/>
-      </label>
-      <label for="title">
-        TITLE
-        <input type="text" id="title" name="title" required/>
-      </label>
-      <label for="pages">
-        PAGES
-        <input type="number" id="pages" name="pages" required/>
-      </label>
-      <label for="read">
-        READ
-        <input type="checkbox" id="read" name="read"/>
-      </label>
-      <input type="submit" id="submit" />
-    </form>
-  </aside>
+      <div id="site-title">
+        <img src="/public/bookshelf.svg" alt="bookshelf icon" width="40px">
+        <h1>LIBRARY OF ODIN</h1>
+      </div>
+      <form action="">
+        <label for="title">
+          TITLE
+          <input type="text" id="title" name="title" required />
+        </label>
+        <label for="author">
+          AUTHOR
+          <input type="text" id="author" name="author" required />
+        </label>
+        <label for="pages">
+          # OF PAGES
+          <input type="number" id="pages" name="pages" required />
+        </label>
+        <label for="read">
+          READ?
+          <input type="checkbox" id="read" name="read" />
+        </label>
+        <input type="submit" id="submit" />
+      </form>
+    </aside>
 
     <main id="display">
-      <div class="books">
-        <div>author</div>
-        <div>title</div>
-        <div>pages</div>
-        <div>read</div>
+      <div class="labels">
+        <div>
+          <img src="/public/book-open-variant.svg" alt="title icon" />
+          TITLE
+        </div>
+        <div>
+          <img src="/public/account.svg" alt="author icon" />
+          AUTHOR
+        </div>
+        <div>
+          <img src="/public/numeric.svg" alt="pages icon" />
+          # OF PAGES
+        </div>
+        <div>
+          <img src="/public/check-circle.svg" alt="read icon" />
+          READ?
+        </div>
       </div>
     </main>
 

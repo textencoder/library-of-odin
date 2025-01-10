@@ -26,10 +26,22 @@ function addBookToLibrary(book) {
 function displayBook(book) {
   bookViewer.innerHTML += `
     <div class="books">
-        <div>${book.author}</div>
-        <div>${book.title}</div>
-        <div>${book.pages}</div>
-        <div>${book.read}</div>
+        <div>
+          <img src="/public/book-open-variant.svg" alt="title icon" />
+          ${book.title}
+        </div>
+        <div>
+          <img src="/public/account.svg" alt="author icon" />
+          ${book.author}
+        </div>
+        <div>
+          <img src="/public/numeric.svg" alt="pages icon" />
+          ${book.pages}
+        </div>
+        <div>
+          <img src="/public/check-circle.svg" alt="read icon" />
+          ${book.read ? "YES" : "NO"}
+        </div>
       </div>
   `
 }
