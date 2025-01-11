@@ -28,19 +28,19 @@ function displayBook(book) {
     <div class="books">
         <div>
           <img src="/public/book-open-variant.svg" alt="title icon" />
-          ${book.title}
+          <p>${book.title}</p>
         </div>
         <div>
           <img src="/public/account.svg" alt="author icon" />
-          ${book.author}
+          <p>${book.author}</p>
         </div>
         <div>
           <img src="/public/numeric.svg" alt="pages icon" />
-          ${book.pages}
+          <p>${book.pages}</p>
         </div>
         <div>
           <img src="/public/check-circle.svg" alt="read icon" />
-          ${book.read ? "YES" : "NO"}
+          <p>${book.read ? "YES" : "NO"}</p>
         </div>
       </div>
   `
