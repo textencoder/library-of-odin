@@ -62,3 +62,11 @@ submitBtn.addEventListener("click", (event) => {
   bookPages.value = "";
   bookRead.checked = false;
 });
+
+document.querySelectorAll('form svg').forEach(svg => {
+  svg.style.fill = '#ffffff';
+})
+
+document.querySelectorAll('.labels svg').forEach(svg => {
+  svg.style.fill = '#ffffff';
+})

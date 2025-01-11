@@ -1,7 +1,7 @@
 :root {
     --color-highlight: #fdfdfd;
     --color-gray: #a3a3a3;
-    --color-mid: #a0ace3;
+    --color-mid: #0099cc;
     --color-dark: #273963;
     --color-black: #000000;
 }
@@ -27,12 +27,12 @@ aside {
     background-color: rgb(30, 41, 41);
     padding: 10px;
     display: grid;
-    align-items: center;
 }
 
 #site-title {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    align-self: start;
 
     h1 {
         font-size: 1.25rem;
@@ -52,43 +52,38 @@ main {
 form {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
-    place-content: center;
-    height: 300px;
+    place-items: center;
+    height: 250px;
     padding: 10px;
-    border: 2px solid white;
-}
-
-label {
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
-
-.books {
-    width: 100%;
-    height: 10%;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr 1fr;
-    gap: 5px;
-    margin-bottom: 10px;
+    gap: 20px;
 
     div {
-        background-color: var(--color-highlight);
-        border-radius: 10px;
         display: grid;
-        place-items: center;
-        grid-template-columns: 1fr 2fr;
-        box-shadow: 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.25);
-        border: 1px solid var(--color-black);
+        grid-template-columns: 1fr 4fr;
+        width: 100%;    
     }
 
-    img {
+    svg {
         width: 30px;
+    }
+
+    input[type="submit"] {
+        width: 50%;
+        height: 100%;
+        border: none;
+        background-color: var(--color-mid);
+        border-radius: 5px;
+        color: var(--color-highlight);
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #004055;
     }
 }
 
-.labels {
+
+.books {
     width: 100%;
     height: 10%;
     border-radius: 10px;
@@ -108,6 +103,31 @@ label {
     }
 
     img {
+        width: 30px;
+    }
+}
+
+.labels {
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 10px;
+
+    div {
+        background-color: rgb(30, 41, 41);
+        color: var(--color-highlight);
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 3fr;
+        box-shadow: 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--color-black);
+    }
+
+    svg {
         width: 30px;
     }
 }
