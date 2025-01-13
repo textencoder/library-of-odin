@@ -15,11 +15,25 @@ function Book(author, title, pages, read) {
   this.read = read;
 }
 
+function setAttribute() {
+  document.querySelectorAll('.books').forEach((el, index) => {
+    el.dataset.attribute = `${index + 1}`;
+    console.log(el.dataset.attribute);
+  })
+}
+
 //add to library array
 function addBookToLibrary(book) {
   myLibrary.push(book);
   displayBook(book);
   console.log(book);
+}
+
+function removeBook(button){
+  let index = button.parentElement.getAttribute("data-attribute");
+  myLibrary.splice(index-1, 1);
+  document.querySelector(`[data-attribute="${index}"]`).remove();
+  setAttribute();
 }
 
 //show book in main display
@@ -37,14 +51,16 @@ function displayBook(book) {
         <div>
           ${book.pages}
         </div>
-        <div>
+        <button onclick="toggleRead()">
           ${book.read ? `<img src="/public/check-circle.svg" alt="read icon" />` : ""}
-        </div>
-        <div>
-
-        </div>
+        </button>
+        
+        <button onclick="removeBook(this)">
+        </button>
+        
       </div>
   `
+  setAttribute();
 }
 
 submitBtn.addEventListener("click", (event) => {
