@@ -35,12 +35,13 @@ function displayBook(book) {
           <p>${book.author}</p>
         </div>
         <div>
-          <img src="/public/numeric.svg" alt="pages icon" />
-          <p>${book.pages}</p>
+          ${book.pages}
         </div>
         <div>
-          <img src="/public/check-circle.svg" alt="read icon" />
-          <p>${book.read ? "YES" : "NO"}</p>
+          ${book.read ? `<img src="/public/check-circle.svg" alt="read icon" />` : ""}
+        </div>
+        <div>
+
         </div>
       </div>
   `
