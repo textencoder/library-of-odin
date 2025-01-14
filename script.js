@@ -15,6 +15,7 @@ function Book(author, title, pages, read) {
   this.read = read;
 }
 
+//set/reset data attributes
 function setAttribute() {
   document.querySelectorAll('.books').forEach((el, index) => {
     el.dataset.attribute = `${index + 1}`;
@@ -27,6 +28,7 @@ function addBookToLibrary(book) {
   displayBook(book);
 }
 
+//remove book from library array and DOM
 function removeBook(button){
   let index = button.parentElement.getAttribute("data-attribute");
   myLibrary.splice(index-1, 1);
@@ -34,6 +36,7 @@ function removeBook(button){
   setAttribute();
 }
 
+//add/remove read status
 function toggleRead(button){
   let index = button.parentElement.getAttribute("data-attribute");
   myLibrary[index-1].read == true ? myLibrary[index-1].read = false 
@@ -43,6 +46,7 @@ function toggleRead(button){
   button.replaceChildren();
 }
 
+//add read checkmark to book
 function setCheckmark(element) {
   const img = document.createElement("img");
   img.src = "/public/check-circle.svg";
@@ -56,22 +60,22 @@ function displayBook(book) {
   bookViewer.innerHTML += `
     <div class="books">
         <div>
-          <img src="/public/book-open-variant.svg" alt="title icon" />
+          <img src="./public/book-open-variant.svg" alt="title icon" />
           <p>${book.title}</p>
         </div>
         <div>
-          <img src="/public/account.svg" alt="author icon" />
+          <img src="./public/account.svg" alt="author icon" />
           <p>${book.author}</p>
         </div>
         <div>
           ${book.pages}
         </div>
         <button onclick="toggleRead(this)">
-          ${book.read ? `<img src="/public/check-circle.svg" alt="read icon" />` : ""}
+          ${book.read ? `<img src="./public/check-circle.svg" alt="read icon" />` : ""}
         </button>
         
         <button onclick="removeBook(this)">
-          <img src="/public/minus-circle-outline.svg" alt="remove book icon">
+          <img src="./public/minus-circle-outline.svg" alt="remove book icon">
         </button>
         
       </div>
