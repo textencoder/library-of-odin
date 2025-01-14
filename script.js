@@ -18,7 +18,6 @@ function Book(author, title, pages, read) {
 function setAttribute() {
   document.querySelectorAll('.books').forEach((el, index) => {
     el.dataset.attribute = `${index + 1}`;
-    console.log(el.dataset.attribute);
   })
 }
 
@@ -26,7 +25,6 @@ function setAttribute() {
 function addBookToLibrary(book) {
   myLibrary.push(book);
   displayBook(book);
-  console.log(book);
 }
 
 function removeBook(button){
@@ -34,6 +32,23 @@ function removeBook(button){
   myLibrary.splice(index-1, 1);
   document.querySelector(`[data-attribute="${index}"]`).remove();
   setAttribute();
+}
+
+function toggleRead(button){
+  let index = button.parentElement.getAttribute("data-attribute");
+  myLibrary[index-1].read == true ? myLibrary[index-1].read = false 
+  : myLibrary[index-1].read = true;
+
+  return myLibrary[index-1].read == true ? setCheckmark(button) :
+  button.replaceChildren();
+}
+
+function setCheckmark(element) {
+  const img = document.createElement("img");
+  img.src = "/public/check-circle.svg";
+  img.alt = "read icon";
+
+  element.appendChild(img);
 }
 
 //show book in main display
@@ -51,11 +66,12 @@ function displayBook(book) {
         <div>
           ${book.pages}
         </div>
-        <button onclick="toggleRead()">
+        <button onclick="toggleRead(this)">
           ${book.read ? `<img src="/public/check-circle.svg" alt="read icon" />` : ""}
         </button>
         
         <button onclick="removeBook(this)">
+          <img src="/public/minus-circle-outline.svg" alt="remove book icon">
         </button>
         
       </div>
