@@ -49,7 +49,7 @@ function toggleRead(button){
 //add read checkmark to book
 function setCheckmark(element) {
   const img = document.createElement("img");
-  img.src = "/public/check-circle.svg";
+  img.src = "./public/check-circle.svg";
   img.alt = "read icon";
 
   element.appendChild(img);
