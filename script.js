@@ -94,6 +94,14 @@ function displayBook(book) {
 }
 
 submitBtn.addEventListener("click", (event) => {
+  if (bookAuthor.validity.valueMissing) {
+    return;
+  } else if (bookTitle.validity.valueMissing) {
+    return;
+  } else if (bookPages.validity.valueMissing) {
+    return;
+  }
+
   event.preventDefault();
   addBookToLibrary(
     new Book(
@@ -117,3 +125,4 @@ document.querySelectorAll('form svg').forEach(svg => {
 document.querySelectorAll('.labels svg').forEach(svg => {
   svg.style.fill = '#ffffff';
 })
+
